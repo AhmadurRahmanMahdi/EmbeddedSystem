@@ -1,0 +1,24 @@
+/*
+ * GccApplication1.c
+ *
+ * Created: 24/10/2022 5:39:00 PM
+ * Author : Mohammad Ahmudur Rahman Mahdi
+ */ 
+#define F_CPU 16000000UL
+
+#include <avr/io.h>
+#include <util/delay.h>
+
+
+int main(void)
+{
+    DDRB |= 0B00100000;
+    while (1) 
+    {
+		PORTB |= 0B00100000;
+		_delay_ms(1000);
+		PORTB &= 0B11011111;
+		_delay_ms(1000);
+    }
+}
+
